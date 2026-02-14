@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat to Sheets</title>
+    <title>My GitHub Site</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="chat-container">
-    <div id="messages"></div>
-    <div id="input-area">
-        <input type="text" id="user-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
+    <nav class="navbar">
+        <div class="nav-logo">MyBrand</div>
+        
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-<script src="script.js"></script>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main style="padding: 20px; text-align: center;">
+        <h1>Welcome to My Site</h1>
+        <p>This is a mobile-friendly home page hosted on GitHub.</p>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
