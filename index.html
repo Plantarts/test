@@ -4,93 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My GitHub Site</title>
-    <style>
-        /* Base Styles */
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Navbar Background */
-        .navbar {
-            background-color: #898989;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem 1rem;
-            position: relative;
-            z-index: 100;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        /* Nav Links - Desktop View */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            padding: 0 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        /* Hamburger (Sandwich) Menu Icon */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 10px;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background-color: white;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%; /* Sits right below navbar */
-                right: -100%; /* Hidden off-screen */
-                flex-direction: column;
-                background-color: #898989;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                right: 0; /* Slides in */
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -117,20 +31,6 @@
         <p>This is a mobile-friendly home page hosted on GitHub.</p>
     </main>
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-
-        // Toggle the 'active' class on click/touch
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked (good for UX)
-        document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        }));
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
