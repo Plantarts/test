@@ -1,37 +1,12 @@
-/* --- NEW EXTERNAL FILE: script.js --- */
-const SCRIPT_URL = "YOUR_WEB_APP_URL_HERE"; 
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
 
-async function sendMessage() {
-    const input = document.getElementById('user-input');
-    const msgDiv = document.getElementById('messages');
-    const text = input.value.trim();
-    
-    if (!text) return;
+// Toggle the 'active' class on click/touch
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
-    // Display User Message
-    msgDiv.innerHTML += `<div class="msg user">${text}</div>`;
-    input.value = '';
-
-    // Simulate AI Response
-    const aiResponse = "I've logged your message: " + text;
-    
-    setTimeout(() => {
-        msgDiv.innerHTML += `<div class="msg bot">${aiResponse}</div>`;
-        msgDiv.scrollTop = msgDiv.scrollHeight;
-    }, 500);
-
-    // --- SEND TO GOOGLE SHEETS ---
-    try {
-        await fetch(SCRIPT_URL, {
-            method: 'POST',
-            mode: 'no-cors', 
-            cache: 'no-cache',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ user: text, bot: aiResponse })
-        });
-        console.log("Data saved to Sheets!");
-    } catch (error) {
-        console.error("Error saving to Sheets:", error);
-    }
-}
-/* --- END OF script.js --- */
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+}));
