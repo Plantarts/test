@@ -1,70 +1,85 @@
-/* --- NEW EXTERNAL FILE: style.css --- */
-body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: #f4f7f6; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    margin: 0; 
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-#chat-container { 
-    width: 400px; 
-    background: white; 
-    border-radius: 10px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
-    overflow: hidden; 
-    display: flex; 
-    flex-direction: column; 
+/* Navbar Background */
+.navbar {
+    background-color: #898989;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 100;
 }
 
-#messages { 
-    height: 400px; 
-    padding: 20px; 
-    overflow-y: auto; 
-    border-bottom: 1px solid #eee; 
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.msg { 
-    margin-bottom: 15px; 
-    padding: 10px; 
-    border-radius: 8px; 
-    max-width: 80%; 
+/* Nav Links - Desktop View */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.user { 
-    background: #007bff; 
-    color: white; 
-    align-self: flex-end; 
-    margin-left: auto; 
+.nav-links li {
+    padding: 0 15px;
 }
 
-.bot { 
-    background: #e9e9eb; 
-    color: #333; 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
 }
 
-#input-area { 
-    display: flex; 
-    padding: 10px; 
+/* Hamburger (Sandwich) Menu Icon */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
 }
 
-input { 
-    flex: 1; 
-    padding: 10px; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-    outline: none; 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
 }
 
-button { 
-    padding: 10px 15px; 
-    background: #28a745; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    margin-left: 5px; 
-    cursor: pointer; 
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        flex-direction: column;
+        background-color: #898989;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
 }
-/* --- END OF style.css --- */
